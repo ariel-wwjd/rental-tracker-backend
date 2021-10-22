@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env NODE_ENV=production node app.js",
-    "dev": "cross-env NODE_ENV=development nodemon app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -19,20 +18,9 @@
   },
   "homepage": "https://github.com/ariel-wwjd/rental-tracker-backend#readme",
   "dependencies": {
-    "connect-mongo": "^4.6.0",
-    "cookie-session": "^1.4.0",
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-session": "^1.17.2",
-    "mongoose": "^6.0.8",
-    "morgan": "^1.10.0",
-    "passport": "^0.5.0",
-    "passport-google-oauth20": "^2.0.0",
-    "passport-jwt": "^4.0.0"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -46,6 +34,10 @@
     "ignore": [
       "nodeModules/**/node_modules"
     ],
-    "delay": "1000"
+    "delay": "1000",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
   }
 }
