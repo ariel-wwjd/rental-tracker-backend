@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const passport = require('passport');
-const { isUserAuthenticated } = require('../middleware/auth');
+// const { isUserAuthenticated } = require('../middleware/auth');
 
 const routes = () => {
   const router = Router();
@@ -31,7 +31,8 @@ const routes = () => {
 
   router.get(
     '/user',
-    isUserAuthenticated,
+    // TODO: Review the api design endpoints for auth routes
+    // isUserAuthenticated,
     (req, res) => {
       res.json(req.user);
     },
