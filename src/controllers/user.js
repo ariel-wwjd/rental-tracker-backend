@@ -9,8 +9,8 @@ const userController = (User) => {
         return res.status(200).json(currentUser);
       }
       const userToSave = new User(userData);
-      await userToSave.save(userData);
-      return res.status(200).json(currentUser).send('User created');
+      const newUser = await userToSave.save(userData);
+      return res.status(200).json(newUser);
     } catch (error) {
       return res.status(500).send(error);
     }
