@@ -1,12 +1,13 @@
 const { Router } = require('express');
 const userController = require('../controllers/user');
 
-const routes = () => {
+const routes = (User) => {
   const router = Router();
-  const controller = userController();
+  const controller = userController(User);
 
   router.route('/')
-    .get(controller.getUser);
+    .get(controller.getUser)
+    .post(controller.user);
 
   return router;
 };
